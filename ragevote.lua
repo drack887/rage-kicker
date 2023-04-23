@@ -2,7 +2,7 @@ local timer = 0;
 
 local function botdetector()
 
-if (gamerules.IsMatchTypeCasual() and timer <= os.time()) then
+if (gamerules.IsMatchTypeCasual() == true and timer <= os.time()) then
 
 timer = os.time() + 2;
 local resources = entities.GetPlayerResources();
