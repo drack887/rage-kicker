@@ -1,8 +1,6 @@
-local timer = 0;
-
 local function botdetector()
 
-if (gamerules.IsMatchTypeCasual() == true and timer <= os.time()) then
+if (gamerules.IsMatchTypeCasual() == true) then
 
 timer = os.time() + 2;
 local resources = entities.GetPlayerResources();
@@ -14,7 +12,7 @@ local userids = resources:GetPropDataTableInt("m_iUserID")
 local accounts = resources:GetPropDataTableInt("m_iAccountID")
 
 local priority = 0~10;
-if playerlist.GetPriority( userids[i] ) ~= 0 then
+if playerlist.GetPriority( userids[i] ) ~= 0 and playerlist.GetPriority( userids[i] ) == 0 then
     playerlist.SetPriority( userids[i], 0);
     playerlist.SetPriority( me, -1 )
 
@@ -58,7 +56,6 @@ local cooldown = msg:ReadInt( 16 )
 
 if(cooldown > 0) then 
 printc( 255,0,0,255,"Vote Cooldown " .. cooldown .. " Seconds");
-timer = os.time() + cooldown
 end
 
 end
