@@ -24,6 +24,12 @@ local playername = client.GetPlayerNameByUserID(userids[i]);
 if (
 me:GetTeamNumber( ) == m
 and userids[i] ~= 0
+and steamid ~= partymembers[1]
+and steamid ~= partymembers[2]
+and steamid ~= partymembers[3]
+and steamid ~= partymembers[4]
+and steamid ~= partymembers[5]
+and steamid ~= partymembers[6]
 and steamid ~= "[U:1:0]"
 and playerlist.GetPriority(userids[i]) ~= -1
 ) then
